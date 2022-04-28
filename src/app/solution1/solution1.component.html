@@ -1,0 +1,70 @@
+
+<div class="card text-center">
+      <div class="card-header">
+        Write a program which takes two strings as input from the user
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Solution 1</h5>
+        <form>
+          <input
+            type="text"
+            [(ngModel)]="str1"
+            name="str1"
+            placeholder="Enter the first string"
+          />
+          <input
+            type="text"
+            [(ngModel)]="str2"
+            name="str2"
+            placeholder="Enter the second string"
+          />
+          <button type="button" class="btn btn-primary" (click)="callTwoTimes(str1, str2)">Submit</button>
+        </form>
+      </div>
+      <div class="card-footer text-muted">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">OP1: {{ result1 }}</li>
+          <li class="list-group-item">OP2: {{ result2 }}</li>
+        </ul>
+
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="card text-center">
+      <div class="card-header">
+        Write a program to call the below mentioned rest APIs.
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Solution 2</h5>
+        <label>Please Enter User Id</label>
+        <input
+          type="number"
+          [(ngModel)]="UserId"
+          name="str3"
+          placeholder="Enter the string" required
+        />
+        <button type="button" class="btn btn-primary" (click)="getUserData(UserId)">Submit</button>
+        <div>
+          <!-- Display UserData into table -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">UserId</th>
+                <th scope="col">UserName</th>
+                <th scope="col">UserEmail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="userData">
+                <th scope="row">{{ userData.id }}</th>
+                <td>{{ userData.first_name }} {{ userData.last_name }}</td>
+                <td>{{ userData.email }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
